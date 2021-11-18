@@ -44,21 +44,21 @@ const members = [
   ];
 
   //  1 Get array of first names of everyone
-// const fname_arr = [];
+
 // let fname = members.map((member)=>{
-//   const names = member.name.split(" ")
-//   fname_arr.push(names[0])        
+//   const names = member.name.split(" ");
+//   return names[0];
+//   // fname_arr.push(names[0]) 
+//   // return fname       
 // })
-// console.log(fname_arr);
+// console.log(fname);
 
 // // 2. Make everyone's last names in UPPERCASE in given array of objects
-// lname_arr = []
-// const lName = members.map((member)=>{
-//     const lname = member.name.split(" ");
-//       const names = `${lname[1].toUpperCase()}`  
-//       lname_arr.push(names) 
-// })
-//  console.log(lname_arr);
+const lname = members.map((member)=>{
+    const split_name = member.name.split(" ");
+    return split_name[1].toUpperCase();
+})
+console.log(lname);
 
 // // // 3. Get entries where age is between 41-60
 // Method 1 const age = members.forEach((member)=>{
@@ -67,10 +67,6 @@ const members = [
 //           console.log(member)
 //       }
 // })
-
-// 2 method
-// const myage = members.map((member) =>(member.age>=41 && member.age<=60)?member:'out of range')
-// console.log(myage);
 
  // 4. get avgof age
 // let filterAge = members.filter(({ age }) => Number.isInteger(age))
