@@ -45,106 +45,133 @@ const members = [
 
   //  1 Get array of first names of everyone
 
-// let fname = members.map((member)=>{
-//   const names = member.name.split(" ");
-//   return names[0];
-//   // fname_arr.push(names[0]) 
-//   // return fname       
-// })
-// console.log(fname);
+let fname = members.map((member)=>{
+  const names = member.name.split(" ");
+  return names[0];
+  // fname_arr.push(names[0]) 
+  // return fname       
+})
+console.log(fname);
 
 // // 2. Make everyone's last names in UPPERCASE in given array of objects
+// Method 1
 const lname = members.map((member)=>{
     const split_name = member.name.split(" ");
-    return split_name[1].toUpperCase();
+    lastName = split_name[1].toUpperCase()
+    const fullname = `${split_name[0]} ${lastName}`
+    const age = member.age 
+    return {fullname, age}
+
 })
 console.log(lname);
 
-// // // 3. Get entries where age is between 41-60
-// Method 1 const age = members.forEach((member)=>{
+// Method 2 ==> using spread operator
+const lname = members.map((member)=>{
+    const split_name = member.name.split(" ");
+    lastName = split_name[1].toUpperCase()
+    const fullname = `${split_name[0]} ${lastName}`
+    return obj = {...member, name:fullname}
+})
+console.log(lname);
 
-//       if(member.age>=41&&member.age<=60){
-//           console.log(member)
-//       }
-// })
+// 3. Get entries where age is between 41-60
+
+const ages = members.filter((member)=>{return member.age>41 && member.age<60})
+console.log(ages);
 
  // 4. get avgof age
-// let filterAge = members.filter(({ age }) => Number.isInteger(age))
-// let average = filterAge.reduce((total, next) =>
-// total + next.age, 0) / members.length;
-// console.log(average);
+let filterAge = members.filter(({ age }) => Number.isInteger(age))
+let average = filterAge.reduce((total, next) =>
+total + next.age, 0) / members.length;
+console.log(average);
   
 //5 get person with max age
 
-// var max = 0;
-// console.log(members.reduce((acc, a) => {
-//   if (a.age > max) {
-//     acc = a.name
-//     max = a.age;
-//   }
-//   return acc;
-// }, ""))
+var max = 0;
+console.log(members.reduce((acc, a) => {
+  if (a.age > max) {
+    acc = a.name
+    max = a.age;
+  }
+  return acc;
+}, ""))
         
         
 
 
 
 // 6 
-// const nonage = []
-// const younger = []
-// const older = []
-// const age = members.forEach((member)=>{
-//       if(member.age==null){
-//           nonage.push(member.age)
-//       }else if (member.age<=40){
-       
-//         younger.push(member.age)
-//       }else{
-//         older.push(member.age)
-//       }
-// })
-// console.log("noAge" , nonage);
-// console.log("Younger",younger);
-// console.log("Older",older);
+
+const age = members.forEach((member)=>{
+      if(member.age>=35){
+          older.push(member.age)
+      }else if (member.age<35){
+        younger.push(member.age)
+      }else{
+        nonage.push(member.age)
+      }
+})
+console.log("noAge" , nonage);
+console.log("Younger",younger);
+console.log("Older",older);
+
+const nonage = []
+const young = []
+const older = [] 
+const age_arr = members.forEach((member)=>{
+   
+      if(member.age>=35)
+      older.push(member.age)
+      else if(member.age<35)
+      young.push(member.age)
+      else
+      nonage.push(member.age)
+  
+
+})
+console.log({nonage,young,older});
+
+
+// console.log(age_arr);
 
 // 7
-// members.splice(2,0,{name:"Abhay Sharma", age:21})
-// console.log(members);
+members.splice(2,0,{name:"Abhay Sharma", age:21})
+console.log(members);
 
 // // 8 
-// const [first,second] = members
-// console.log(first,second);
+const [first,second] = members
+console.log(first,second);
 
 // // 9
-// const newArr = [
-//     {name:"kunal Mod" , age: 22},
-//     ...members
-// ]
-// console.log(newArr);
+const newArr = [
+    {name:"kunal Mod" , age: 22},
+    ...members
+]
+console.log(newArr);
 
 // // // 10
-// for(let { name, age } of members) {
-//     console.log(`${name} is ${age} years old!`);
-// }
+for(let { name, age } of members) {
+    console.log(`${name} is ${age} years old!`);
+}
 
 // // 11
-// const [{name:fullname,age:currage}]=members;
-// console.log(fullname);
+const [{name:fullname,age:currage}]=members;
+console.log(fullname);
 
 
 // // 12
-// for(let { name,...age } of members) {
-//       console.log(name,age);
-//  }
+for(let { name,...age } of members) {
+      console.log(name,age);
+ }
 
 // // 13 
-// const newObj = {...members}
-// members[1].name = 'Suresh'
-// members[1].age = 55;
-// console.log(newObj);
+const newObj = {...members}
+members[1].name = 'Suresh'
+members[1].age = 55;
+console.log(newObj);
 
 
 // // 14
-// // let averages = filterAge.reduce((total, next) =>
-// // total + next.age, 0) / members.length;
-// // console.log(averages);
+let averages = filterAge.reduce((total, next) =>
+total + next.age, 0) / members.length;
+console.log(averages);
