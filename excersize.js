@@ -44,47 +44,54 @@ const members = [
   ];
 
   //  1 Get array of first names of everyone
-// const fName = members.forEach((member)=>{
-//       console.log(member.name)
+// const fname_arr = [];
+// let fname = members.map((member)=>{
+//   const names = member.name.split(" ")
+//   fname_arr.push(names[0])        
 // })
+// console.log(fname_arr);
+
 // // 2. Make everyone's last names in UPPERCASE in given array of objects
-// const lName = members.forEach((member)=>{
+// lname_arr = []
+// const lName = members.map((member)=>{
 //     const lname = member.name.split(" ");
-//     member.name = `${lname[0]} ${lname[1].toUpperCase()}`   
+//       const names = `${lname[1].toUpperCase()}`  
+//       lname_arr.push(names) 
 // })
-//  console.log(members);
+//  console.log(lname_arr);
 
 // // // 3. Get entries where age is between 41-60
-// const age = members.forEach((member)=>{
-//       member.age
+// Method 1 const age = members.forEach((member)=>{
+
 //       if(member.age>=41&&member.age<=60){
 //           console.log(member)
 //       }
 // })
 
-// // 4. get avgof age
+// 2 method
+// const myage = members.map((member) =>(member.age>=41 && member.age<=60)?member:'out of range')
+// console.log(myage);
+
+ // 4. get avgof age
 // let filterAge = members.filter(({ age }) => Number.isInteger(age))
 // let average = filterAge.reduce((total, next) =>
 // total + next.age, 0) / members.length;
 // console.log(average);
   
-// //5 get person with max age
+//5 get person with max age
 
-// let MaxAge = members.filter(({age}) => console.log(age))
-let maxAge = members.forEach((member)=>{
-    if(member.age == null)
-    return 'hello'
-    else{
-        const maxOfAge = member.age;
-        console.log(Math.max(maxOfAge));
-
-        // checking push
-        const hello = 'abhay'
+// var max = 0;
+// console.log(members.reduce((acc, a) => {
+//   if (a.age > max) {
+//     acc = a.name
+//     max = a.age;
+//   }
+//   return acc;
+// }, ""))
+        
         
 
-    } 
-     
-})
+
 
 // 6 
 // const nonage = []
@@ -139,10 +146,6 @@ let maxAge = members.forEach((member)=>{
 // members[1].name = 'Suresh'
 // members[1].age = 55;
 // console.log(newObj);
-
-// console.log(newObj);
-// newObj. = "Sunil Sir"
-
 
 
 // // 14
