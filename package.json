@@ -1,0 +1,22 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exc_loadash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeforgrow/abhays-javascript-excercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeforgrow/abhays-javascript-excercise/issues"
+  },
+  "homepage": "https://github.com/codeforgrow/abhays-javascript-excercise#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
