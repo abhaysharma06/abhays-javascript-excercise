@@ -45,46 +45,45 @@ const members = [
 
   //  1 Get array of first names of everyone
 
-let fname = members.map((member)=>{
+const arrFirstName = members.map((member)=>{
   const names = member.name.split(" ");
   return names[0];
   // fname_arr.push(names[0]) 
   // return fname       
 })
-console.log(fname);
+console.log(arrFirstName);
 
 // // 2. Make everyone's last names in UPPERCASE in given array of objects
 // Method 1
-const lname = members.map((member)=>{
-    const split_name = member.name.split(" ");
-    lastName = split_name[1].toUpperCase()
-    const fullname = `${split_name[0]} ${lastName}`
+const arrLastName  = members.map((member)=>{
+    const splitName = member.name.split(" ");
+    lastName = splitName[1].toUpperCase()
+    const name = `${splitName[0]} ${lastName}`
     const age = member.age 
-    return {fullname, age}
+    return {name, age}
 
 })
-console.log(lname);
+console.log(arrLastName);
 
 // Method 2 ==> using spread operator
-const lname = members.map((member)=>{
-    const split_name = member.name.split(" ");
-    lastName = split_name[1].toUpperCase()
-    const fullname = `${split_name[0]} ${lastName}`
-    return obj = {...member, name:fullname}
+const arrLastName = members.map((member)=>{
+    const splitName = member.name.split(" ");
+    lastName = splitName[1].toUpperCase()
+    const name = `${splitName[0]} ${lastName}`
+    return obj = {...member, name}
 })
-console.log(lname);
+console.log(arrLastName);
 
 // 3. Get entries where age is between 41-60
 
-const ages = members.filter((member)=>{return member.age>41 && member.age<60})
+const  ageOfArr = members.filter((member)=>{return member.age>41 && member.age<60})
 console.log(ages);
 
  // 4. get avgof age
 let filterAge = members.filter(({ age }) => Number.isInteger(age))
-const total = 0
-let average = filterAge.reduce((total, next) =>
-total + next.age) / members.length;
-console.log(average);
+let averageOfAges = filterAge.reduce((total, next) =>
+total + next.age,0) / members.length;
+console.log(averageOfAges);
   
 //5 get person with max age
 
@@ -103,7 +102,7 @@ console.log(members.reduce((acc, a) => {
 const nonage = []
 const young = []
 const older = [] 
-const age_arr = members.forEach((member)=>{
+const checkingAges = members.forEach((member)=>{
    
       if(member.age>=35)
       older.push(member.age)

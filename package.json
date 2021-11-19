@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/codeforgrow/abhays-javascript-excercise#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
   }
 }
